@@ -6,13 +6,79 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      // Main Colors
+      colorPrimary: '#ff014f',
+      colorSecondary: '#f4f5f6',
+      colorTertiary: '#0d1013',
+      colorGray: '#f6f6f6',
+      colorSubtitle: '#f9004d',
+
+      // Typo Colors
+      colorHeadingwv: '#1e2125',
+      colorBody: '#878e99',
+      colorBodyWhite: '#3c3e41',
+      colorlightn: '#c4cfde',
+
+      // Gery Colors
+      colorMidgray: '#878787',
+      colorLight: '#e4e6ea',
+      colorLighter: '#ced0d4',
+      colorLightest: '#f0f2f5',
+      colorBorder: '#e6e6e6',
+      colorWhite75: 'rgba(255, 255, 255, 0.75)',
+
+      // Background Color
+      backgroundColor2: '#212428',
+
+      // notify Colors
+      colorSuccess: '#3eb75e',
+      colorDanger: '#ff0003',
+      colorWarning: '#ff8f3c',
+      colorInfo: '#1ba2db',
+
+      // Social icon colors
+      colorFacebook: '#3b5997',
+      colorTwitter: '#1ba1f2',
+      colorYoutube: '#ed4141',
+      colorLinkedin: '#0077b5',
+      colorPinterest: '#e60022',
+      colorInstagram: '#c231a1',
+      colorVimeo: '#00adef',
+      colorWwitch: '#6441a3',
+      colorDiscord: '#7289da',
+    },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-primary': 'linear-gradient(145deg, #1e2024, #23272b)',
+      },
+      fontFamily: {
+        // Font Family
+        fontPrimary: ['Poppins', 'sans-serif'],
+        fontSecondary: ['Montserrat', 'sans-serif'],
+      },
+      fontSize: {
+        // Fonts Size
+        fontSizeb1: '18px',
+        fontSizeb2: '22px',
+        fontSizeb3: '14px',
+
+        // Heading Font
+        h1: '70px',
+        h2: '60px',
+        h3: '50px',
+        h4: '40px',
+        h5: '30px',
+        h6: '20px',
+      },
+
+      lineHeight: {
+        // Line Height
+        lineHeightb1: '1.50',
+        lineHeightb2: '1.6',
+        lineHeightb3: '1.7',
       },
     },
   },
   plugins: [],
-}
+};
