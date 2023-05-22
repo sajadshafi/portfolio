@@ -32,6 +32,12 @@
         "unnamedComponents": ["arrow-function", "function-expression"]
       }
     ],
-    "react/button-has-type": 0
+    "react/button-has-type": 0,
+    "scss/at-rule-no-unknown": [
+      0,
+      {
+        "ignoreAtRules": ["tailwind"]
+      }
+    ]
   }
 }
