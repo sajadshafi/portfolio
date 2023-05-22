@@ -18,7 +18,7 @@ module.exports = {
       colorHeadingwv: '#1e2125',
       colorBody: '#878e99',
       colorBodyWhite: '#3c3e41',
-      colorlightn: '#c4cfde',
+      colorLightn: '#c4cfde',
 
       // Gery Colors
       colorMidgray: '#878787',
@@ -26,6 +26,7 @@ module.exports = {
       colorLighter: '#ced0d4',
       colorLightest: '#f0f2f5',
       colorBorder: '#e6e6e6',
+      colorWhite: '#ffffff',
       colorWhite75: 'rgba(255, 255, 255, 0.75)',
 
       // Background Color
@@ -52,6 +53,9 @@ module.exports = {
       backgroundImage: {
         'gradient-primary': 'linear-gradient(145deg, #1e2024, #23272b)',
       },
+      boxShadow: {
+        shadow1: '10px 10px 19px #1c1e22, -10px -10px 19px #262a2e',
+      },
       fontFamily: {
         // Font Family
         fontPrimary: ['Poppins', 'sans-serif'],
@@ -77,6 +81,12 @@ module.exports = {
         lineHeightb1: '1.50',
         lineHeightb2: '1.6',
         lineHeightb3: '1.7',
+      },
+      borderRadius: {
+        primary: '6px',
+      },
+      transitionDuration: {
+        '400ms': '0.4s',
       },
     },
   },
