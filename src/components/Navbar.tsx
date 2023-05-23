@@ -1,14 +1,34 @@
+'use client';
+
 import React from 'react';
-import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { Montserrat } from 'next/font/google';
+// import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import routes from '@/utils/routes';
 
+const montserrat = Montserrat({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  fallback: ['Helvatica', 'Verdana'],
+  display: 'swap',
+});
+
 const Navbar = () => {
+  const currentRoute = usePathname();
   return (
-    <div className="">
-      <motion.nav className="md:flex items-center hidden justify-between px-4 h-[122px]">
+    <div>
+      <nav
+        // initial={{ y: -50, opacity: 0.5 }}
+        // animate={{
+        //   y: 0,
+        //   opacity: 1,
+        //   transition: { duration: 0.5, delay: 0.2 },
+        // }}
+        className="md:flex animate-slideDown items-center hidden justify-between px-4 h-[122px]">
         <Image
           className=""
           src="/images/logo-light-200.png"
@@ -23,7 +43,13 @@ const Navbar = () => {
                 key={route.to}
                 className="mx-[10px] my-[5px] ">
                 <Link
-                  className="uppercase transition-colors duration-400ms hover:text-colorWhite hover:font-medium text-[13px] px-[10px] dark:text-colorLightn py-[5px] block"
+                  className={`uppercase transition-colors duration-400ms hover:text-colorWhite hover:font-medium text-[13px] px-[10px] leading-lineHeightb1 ${
+                    montserrat.className
+                  } py-[5px] block ${
+                    currentRoute === route.to
+                      ? 'text-colorWhite font-medium'
+                      : 'text-colorLightn'
+                  }`}
                   href={route.to}>
                   {route.text}
                 </Link>
@@ -39,7 +65,7 @@ const Navbar = () => {
             </a>
           </div>
         </ul>
-      </motion.nav>
+      </nav>
       <nav className="flex md:hidden mt-20">
         <ul>
           {routes &&

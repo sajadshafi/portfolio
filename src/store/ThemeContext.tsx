@@ -8,13 +8,7 @@ const ThemeContext = React.createContext<ThemeContextOptions>({
   toggleTheme: () => {},
 });
 
-export const ThemeProvider = ({
-  children,
-  classes,
-}: {
-  children: React.ReactNode;
-  classes: string;
-}) => {
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = React.useState<ThemeType>('dark');
 
   const SwitchTheme = useCallback(() => {
@@ -38,7 +32,10 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <body className={`${theme} ${classes} bg-backgroundColor2`}>
+      <body
+        className={`${theme} ${
+          theme === 'dark' ? 'bg-backgroundColor2' : 'bg-backgroundColor1'
+        }`}>
         {children}
       </body>
     </ThemeContext.Provider>

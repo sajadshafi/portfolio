@@ -30,6 +30,7 @@ module.exports = {
       colorWhite75: 'rgba(255, 255, 255, 0.75)',
 
       // Background Color
+      backgroundColor1: '#ECF0F3',
       backgroundColor2: '#212428',
 
       // notify Colors
@@ -58,8 +59,8 @@ module.exports = {
       },
       fontFamily: {
         // Font Family
-        fontPrimary: ['Poppins', 'sans-serif'],
-        fontSecondary: ['Montserrat', 'sans-serif'],
+        primary: ['Poppins', 'sans-serif'],
+        secondary: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
         // Fonts Size
@@ -87,6 +88,15 @@ module.exports = {
       },
       transitionDuration: {
         '400ms': '0.4s',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-60%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 800ms ease-in-out',
       },
     },
   },

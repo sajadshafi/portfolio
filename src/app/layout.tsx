@@ -1,16 +1,6 @@
-import { Montserrat } from 'next/font/google';
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
 import Navbar from '@/components/Navbar';
-
-const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  preload: true,
-  fallback: ['Helvatica', 'Verdana'],
-  adjustFontFallback: true,
-  subsets: ['latin'],
-});
 
 export const metadata = {
   title: 'Home | Sajad Shafi',
@@ -26,7 +16,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <ThemeProvider classes={montserrat.className}>
+      <ThemeProvider>
         <Navbar />
         <main>{children}</main>
       </ThemeProvider>
