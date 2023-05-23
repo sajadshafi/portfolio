@@ -34,7 +34,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     <ThemeContext.Provider value={contextValue}>
       <body
         className={`${theme} ${
-          theme === 'dark' ? 'bg-backgroundColor2' : 'bg-backgroundColor1'
+          theme === 'dark'
+            ? 'bg-backgroundColor2 text-colorLightn'
+            : 'bg-backgroundColor1 text-colorBodyWhite'
         }`}>
         {children}
       </body>

@@ -2,36 +2,33 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { Montserrat } from 'next/font/google';
+import localFont from 'next/font/local';
 // import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import routes from '@/utils/routes';
+import ThemeSwitch from './ThemeSwitch';
+import useTheme from '@/store/ThemeContext';
 
-const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  fallback: ['Helvatica', 'Verdana'],
-  display: 'swap',
+const montserrat = localFont({
+  src: '../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf',
 });
 
 const Navbar = () => {
   const currentRoute = usePathname();
+  const { theme } = useTheme();
   return (
-    <div>
-      <nav
-        // initial={{ y: -50, opacity: 0.5 }}
-        // animate={{
-        //   y: 0,
-        //   opacity: 1,
-        //   transition: { duration: 0.5, delay: 0.2 },
-        // }}
-        className="md:flex animate-slideDown items-center hidden justify-between px-4 h-[122px]">
+    <>
+      <nav className="lg:flex animate-slideDown items-center hidden justify-between px-4 h-[122px]">
         <Image
-          className=""
-          src="/images/logo-light-200.png"
+          className="w-[140px] h-auto"
+          priority
+          src={
+            theme === 'dark'
+              ? '/images/logo-light-200.png'
+              : '/images/logo-dark-200.png'
+          }
           width={140}
           height={70}
           alt="Sajad Shafi - Professional Software Engineer"
@@ -43,12 +40,12 @@ const Navbar = () => {
                 key={route.to}
                 className="mx-[10px] my-[5px] ">
                 <Link
-                  className={`uppercase transition-colors duration-400ms hover:text-colorWhite hover:font-medium text-[13px] px-[10px] leading-lineHeightb1 ${
+                  className={`uppercase transition-colors duration-400ms hover:text-colorPrimary dark:hover:text-colorWhite font-semibold dark:font-medium text-[13px] px-[10px] leading-lineHeightb1 ${
                     montserrat.className
                   } py-[5px] block ${
                     currentRoute === route.to
-                      ? 'text-colorWhite font-medium'
-                      : 'text-colorLightn'
+                      ? 'text-colorPrimary'
+                      : 'dark:text-colorLightn text-colorBodyWhite '
                   }`}
                   href={route.to}>
                   {route.text}
@@ -56,17 +53,18 @@ const Navbar = () => {
               </li>
             ))}
           <div className="mx-4 flex justify-end">
-            <a
-              className="rn-btn bg-gradient-primary shadow-shadow1 rounded-primary text-colorPrimary leading-5 text-[13px] py-[17px] px-[19px]"
-              target="_blank"
-              rel="noreferrer"
-              href="https://themeforest.net/checkout/from_item/33188244?license=regular">
+            <Link
+              className={`bg-gradientBoxw dark:hover:bg-gradient-secondary shadow-shadowWhite3 rounded-primary text-colorPrimary leading-5 text-[13px] py-[17px] px-[19px] dark:bg-gradient-primary dark:hover:shadow-shadow1 hover:bg-gradientRedHover font-medium hover:text-colorWhite dark:hover:text-colorSubtitle dark:shadow-shadow1 hover:-translate-y-1 transition-all duration-400ms ${montserrat.className}`}
+              href="/">
               <span>HIRE ME</span>
-            </a>
+            </Link>
+          </div>
+          <div className="flex items-center ml-5">
+            <ThemeSwitch />
           </div>
         </ul>
       </nav>
-      <nav className="flex md:hidden mt-20">
+      <nav className="flex lg:hidden mt-20">
         <ul>
           {routes &&
             routes.map(route => (
@@ -76,7 +74,7 @@ const Navbar = () => {
             ))}
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 

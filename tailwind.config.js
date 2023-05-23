@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -53,9 +54,17 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-primary': 'linear-gradient(145deg, #1e2024, #23272b)',
+        'gradient-secondary':
+          'linear-gradient(to right bottom, #212428, #16181c)',
+        'gradientBoxw': 'linear-gradient(145deg, #e2e8ec, #ffffff)',
+        'gradientRedHover': 'linear-gradient(145deg, #ff014f, #d11414)',
       },
       boxShadow: {
         shadow1: '10px 10px 19px #1c1e22, -10px -10px 19px #262a2e',
+        shadow2: 'inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225',
+        innerShadow:
+          '1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset',
+        shadowWhite3: '5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff',
       },
       fontFamily: {
         // Font Family
