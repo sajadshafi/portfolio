@@ -1,7 +1,8 @@
 export interface ButtonProps {
-  text: string;
-  classes: string;
+  text?: string;
+  classes?: string;
   onClick: () => void;
+  icon?: React.ReactNode;
 }
 
 export interface ThemeContextOptions {

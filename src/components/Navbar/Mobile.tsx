@@ -12,6 +12,7 @@ import routes from '@/utils/routes';
 import ThemeSwitch from '../ThemeSwitch';
 import useTheme from '@/store/ThemeContext';
 import CloseIcon from '../icons/CloseIcon';
+import ButtonPrimary from '../common/Button';
 
 const overlayVariant: Variants = {
   hidden: { opacity: 0, transition: { duration: 0.5 } },
@@ -105,11 +106,12 @@ const MobileNav = () => {
                   height={70}
                   alt="Sajad Shafi - Professional Software Engineer"
                 />
-                <button
+
+                <ButtonPrimary
+                  classes="rounded-full"
                   onClick={() => setShowMobileNav(false)}
-                  className="text-colorPrimary p-2 rounded-full shadow-shadowWhite3 hover:bg-gradientRedHover dark:shadow-shadow1 hover:text-colorSecondary transition-all duration-300">
-                  <CloseIcon />
-                </button>
+                  icon={<CloseIcon />}
+                />
               </div>
               <ul className="pt-5 border-t border-t-colorTertiary dark:border-t-colorLight border-opacity-20">
                 {routes &&
