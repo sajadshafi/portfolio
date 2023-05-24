@@ -70,8 +70,8 @@ module.exports = {
       },
       fontFamily: {
         // Font Family
-        primary: ['Poppins', 'sans-serif'],
-        secondary: ['Montserrat', 'sans-serif'],
+        primary: ['var(--font-montserrat)'],
+        secondary: ['var(--font-poppins)'],
       },
       fontSize: {
         // Fonts Size

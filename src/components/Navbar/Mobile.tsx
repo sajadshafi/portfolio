@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import localFont from 'next/font/local';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,10 +12,6 @@ import routes from '@/utils/routes';
 import ThemeSwitch from '../ThemeSwitch';
 import useTheme from '@/store/ThemeContext';
 import CloseIcon from '../icons/CloseIcon';
-
-const montserrat = localFont({
-  src: '../../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf',
-});
 
 const overlayVariant: Variants = {
   hidden: { opacity: 0, transition: { duration: 0.5 } },
@@ -31,7 +26,7 @@ const navbarVariant: Variants = {
 const MobileNav = () => {
   const currentRoute = usePathname();
   const { theme } = useTheme();
-  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(true);
 
   useEffect(() => {
     if (showMobileNav) {
@@ -50,7 +45,7 @@ const MobileNav = () => {
   };
 
   return (
-    <div className="animate-slideDown lg:hidden">
+    <div className="animate-slideDown lg:hidden font-primary">
       <div className="flex items-center p-4 justify-between">
         <Image
           className="w-[120px] h-auto"
@@ -85,7 +80,7 @@ const MobileNav = () => {
               id="overlay"
               variants={overlayVariant}
               onClick={closeModelOnOverlayClick}
-              className={`absolute w-full z-40 top-0 left-0 right-0 bottom-0 bg-colorTertiary bg-opacity-70 ${montserrat.className} h-screen`}
+              className="absolute w-full z-40 top-0 left-0 right-0 bottom-0 bg-colorTertiary bg-opacity-70 h-screen"
             />
             <motion.nav
               initial="hidden"
@@ -135,7 +130,7 @@ const MobileNav = () => {
                   ))}
                 <div className="mt-10 mb-5 flex">
                   <Link
-                    className={`neo-button group ${montserrat.className}`}
+                    className="neo-button group"
                     href="/">
                     <span className="text-xl group-hover:scale-125 wave mr-3">
                       <IoHandLeft />

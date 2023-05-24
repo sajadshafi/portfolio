@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
 import Navbar from '@/components/Navbar/Navbar';
+import fonts from '@/utils/fontConfig';
 
 export const metadata = {
   title: 'Home | Sajad Shafi',
@@ -17,8 +18,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <ThemeProvider>
-        <Navbar />
-        <main>{children}</main>
+        <div
+          className={`${fonts.poppins.variable} ${fonts.montserrat.variable}`}>
+          <Navbar />
+          <main>{children}</main>
+        </div>
       </ThemeProvider>
     </html>
   );
