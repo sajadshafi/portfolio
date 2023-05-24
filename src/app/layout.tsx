@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 
 export const metadata = {
   title: 'Home | Sajad Shafi',

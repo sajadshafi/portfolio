@@ -7,11 +7,11 @@ const ThemeSwitch = () => {
   return (
     <label
       htmlFor="theme"
-      className="theme">
-      <span className="theme__toggle-wrap">
+      className="theme cursor-pointer">
+      <span className="theme__toggle-wrap mx-0 cursor-pointer">
         <input
           id="theme"
-          className="theme__toggle"
+          className="theme__toggle cursor-pointer"
           type="checkbox"
           checked={theme === 'dark'}
           onChange={toggleTheme}
