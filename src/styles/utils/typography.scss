@@ -1,3 +1,7 @@
+// font family
+$font-primary: var('--font-montserrat');
+$font-secondary: var('--font-poppins');
+
 // Font weight
 $p-light: 300;
 $p-regular: 400;
@@ -6,19 +10,6 @@ $p-semi-bold: 600;
 $p-bold: 700;
 $p-extra-bold: 800;
 $p-black: 900;
-
-// Font weight
-$s-light: 300;
-$s-regular: 400;
-$s-medium: 500;
-$s-semi-bold: 600;
-$s-bold: 700;
-$s-extra-bold: 800;
-$s-black: 900;
-
-// Font Family
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Montserrat', sans-serif;
 
 //Fonts Size
 $font-size-b1: 18px;
