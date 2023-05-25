@@ -19,9 +19,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <ThemeProvider>
         <div
-          className={`${fonts.poppins.variable} ${fonts.montserrat.variable}`}>
+          className={`${fonts.poppins.variable} relative ${fonts.montserrat.variable}`}>
           <Navbar />
-          <main>{children}</main>
+          {children}
         </div>
       </ThemeProvider>
     </html>

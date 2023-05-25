@@ -221,6 +221,57 @@ a {
 }
 // #endregion
 
+// #region neo theme switch
+.label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #394a56;
+}
+
+.label-text {
+  margin-left: 16px;
+}
+
+.toggle {
+  isolation: isolate;
+  position: relative;
+  height: 30px;
+  width: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 11px 11px 22px #15171a, -11px -11px 22px #313539,
+    4px 4px 4px 0px #1b1b1b inset, -4px -4px 4px 0px #333333 inset;
+}
+
+.toggle-state {
+  display: none;
+}
+
+.indicator {
+  height: 100%;
+  width: 50%;
+  background: #ecf0f3;
+  border-radius: 15px;
+  transform: translate3d(0%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+}
+
+.dark-indicator {
+  box-shadow: 11px 11px 22px #15171a, -11px -11px 22px #404448;
+}
+
+.toggle-state:checked ~ .indicator {
+  transform: translate3d(100%, 0, 0);
+}
+
+.light-toggle {
+  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6,
+    4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+}
+// #endregion
+
 // #region Navbar
 .mobile-navbar,
 body {
@@ -239,8 +290,20 @@ body {
 }
 // #endregion
 
+.hire {
+  @apply bg-gradientBoxw dark:hover:bg-gradient-secondary shadow-shadowWhite3 rounded-primary text-colorPrimary leading-5 text-[14px] py-[17px] px-[19px] dark:bg-gradient-primary hover:bg-gradientRedHover font-medium hover:text-colorWhite dark:hover:text-colorSubtitle hover:-translate-y-1 duration-400ms w-full text-center flex justify-center items-center ease-in-out;
+}
+
 .neo-button {
-  @apply bg-gradientBoxw dark:hover:bg-gradient-secondary shadow-shadowWhite3 rounded-primary text-colorPrimary leading-5 text-[14px] py-[17px] px-[19px] dark:bg-gradient-primary dark:hover:shadow-neoLarge hover:bg-gradientRedHover font-medium hover:text-colorWhite dark:hover:text-colorSubtitle dark:shadow-neoLarge hover:-translate-y-1 transition-all duration-400ms w-full text-center flex justify-center items-center;
+  @apply dark:hover:shadow-neoLarge dark:shadow-neoLarge transition-all;
+}
+
+.hire-me-d {
+  @apply dark:hover:shadow-shadow1 dark:shadow-shadow1;
+}
+
+.hire-me-d {
+  transition-property: background-image, color, transform;
 }
 
 .nav-link {
@@ -285,3 +348,21 @@ body {
     }
   }
 }
+
+// #region tooltips
+.tooltiptop {
+  &::after {
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 6px solid $color-primary;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+}
+// #endregion

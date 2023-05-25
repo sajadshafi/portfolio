@@ -8,13 +8,19 @@ import Link from 'next/link';
 import routes from '@/utils/routes';
 import ThemeSwitch from '../ThemeSwitch';
 import useTheme from '@/store/ThemeContext';
+import useYScroll from '@/hooks/useYScroll';
 
 const DesktopNav = () => {
   const currentRoute = usePathname();
   const { theme } = useTheme();
+  const { scrollProgressY } = useYScroll();
 
   return (
-    <nav className="lg:flex animate-slideDown items-center hidden justify-between px-4 h-[122px]">
+    <nav
+      className={`lg:flex z-50 items-center hidden justify-between px-4 h-[122px]  ${
+        scrollProgressY > 140 &&
+        'h-[90px] animate-slideDown backdrop-blur-md dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowNavLight dark:bg-bgGlassDark top-0 sticky'
+      }`}>
       <Image
         className="w-[140px] h-auto"
         priority
@@ -34,10 +40,10 @@ const DesktopNav = () => {
               key={route.to}
               className="mx-[10px] my-[5px] ">
               <Link
-                className={`uppercase transition-colors duration-400ms hover:text-colorPrimary dark:hover:text-colorWhite font-semibold dark:font-medium text-[13px] px-[10px] leading-lineHeightb1 py-[5px] block ${
+                className={`uppercase transition-colors duration-400ms hover:text-colorPrimary dark:hover:text-colorPrimary font-semibold font-primary dark:font-medium dark:hover:font-semibold text-[13px] px-[10px] leading-lineHeightb1 py-[5px] block ${
                   currentRoute === route.to
                     ? 'text-colorPrimary'
-                    : 'dark:text-colorLightn text-colorBodyWhite '
+                    : 'dark:text-colorLightn dark:font-semibold text-colorBodyWhite '
                 }`}
                 href={route.to}>
                 {route.text}
@@ -46,7 +52,7 @@ const DesktopNav = () => {
           ))}
         <div className="mx-4 flex justify-end">
           <Link
-            className="bg-gradientBoxw dark:hover:bg-gradient-secondary shadow-shadowWhite3 rounded-primary text-colorPrimary leading-5 text-[14px] py-[17px] px-[19px] dark:bg-gradient-primary dark:hover:shadow-shadow1 hover:bg-gradientRedHover font-medium hover:text-colorWhite dark:hover:text-colorSubtitle dark:shadow-shadow1 hover:-translate-y-1 transition-all duration-400ms w-full text-center flex justify-center items-center"
+            className="hire hire-me-d"
             href="/">
             <span>HIRE ME</span>
           </Link>
