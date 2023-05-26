@@ -18,7 +18,7 @@ const DesktopNav = () => {
   return (
     <nav
       className={`lg:flex z-50 items-center hidden justify-between px-4 h-[122px]  ${
-        scrollProgressY > 140 &&
+        scrollProgressY > 130 &&
         'h-[90px] animate-slideDown backdrop-blur-md dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowNavLight dark:bg-bgGlassDark top-0 sticky'
       }`}>
       <Image
@@ -52,7 +52,7 @@ const DesktopNav = () => {
           ))}
         <div className="mx-4 flex justify-end">
           <Link
-            className="hire hire-me-d"
+            className="hire links-desktop"
             href="/">
             <span>HIRE ME</span>
           </Link>

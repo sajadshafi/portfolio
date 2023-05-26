@@ -20,7 +20,7 @@ export const IconLink = ({ to, classes, icon, text }: LinkProps) => {
     <Link
       href={to}
       target="_blank"
-      className={`text-colorPrimary p-3 shadow-shadowWhite3 dark:bg-gradient-secondary hover:bg-gradientRedHover dark:hover:bg-gradientRedHover dark:shadow-shadow1 hover:text-colorSecondary flex items-center flex-col transition-all duration-300 ${classes}`}>
+      className={`text-colorPrimary links-desktop p-3 shadow-shadowWhite3 dark:bg-gradient-secondary hover:bg-gradientRedHover dark:hover:bg-gradientRedHover dark:shadow-shadow1 hover:text-colorSecondary flex items-center flex-col transition-all duration-300 ${classes}`}>
       {icon && <span>{icon}</span>}
       {text && <span>{text}</span>}
     </Link>

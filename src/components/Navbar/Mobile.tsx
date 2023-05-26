@@ -50,7 +50,7 @@ const MobileNav = () => {
   return (
     <header
       className={`lg:hidden z-50 font-primary ${
-        scrollProgressY > 140 &&
+        scrollProgressY > 130 &&
         'scrollable animate-slideDown backdrop-blur-md dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowNavLight dark:bg-bgGlassDark top-0 sticky'
       }`}>
       <div className="flex items-center p-4 justify-between">
