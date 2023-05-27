@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
 import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer';
 import fonts from '@/utils/fontConfig';
 
 export const metadata = {
@@ -19,9 +20,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <ThemeProvider>
         <div
-          className={`${fonts.poppins.variable} ${fonts.montserrat.variable}`}>
+          className={`${fonts.poppins.variable} relative ${fonts.montserrat.variable}`}>
           <Navbar />
-          <main>{children}</main>
+          {children}
+          <Footer />
         </div>
       </ThemeProvider>
     </html>

@@ -34,6 +34,7 @@ module.exports = {
       backgroundColor1: '#ECF0F3',
       backgroundColor2: '#212428',
       backgroundColor3: '#191b1e',
+      bgGlassDark: 'rgba(33, 36, 40, 0.87)',
 
       // notify Colors
       colorSuccess: '#3eb75e',
@@ -67,6 +68,7 @@ module.exports = {
           '1px 4px 2px -3px rgba(0, 0, 0, 0.7) inset -1px -3px 3px -2px rgba(255, 255, 255, 0.2) inset',
         shadowWhite3: '5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff',
         neoLarge: '11px 11px 34px #1b1e21 -11px -11px 34px #272a2f',
+        shadowNavLight: '10px 10px 19px rgba(0, 0, 0, 0.1)',
       },
       fontFamily: {
         // Font Family

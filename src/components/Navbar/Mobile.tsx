@@ -13,6 +13,7 @@ import ThemeSwitch from '../ThemeSwitch';
 import useTheme from '@/store/ThemeContext';
 import CloseIcon from '../icons/CloseIcon';
 import ButtonPrimary from '../common/Button';
+import useYScroll from '@/hooks/useYScroll';
 
 const overlayVariant: Variants = {
   hidden: { opacity: 0, transition: { duration: 0.5 } },
@@ -27,7 +28,8 @@ const navbarVariant: Variants = {
 const MobileNav = () => {
   const currentRoute = usePathname();
   const { theme } = useTheme();
-  const [showMobileNav, setShowMobileNav] = useState<boolean>(true);
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
+  const { scrollProgressY } = useYScroll();
 
   useEffect(() => {
     if (showMobileNav) {
@@ -46,11 +48,14 @@ const MobileNav = () => {
   };
 
   return (
-    <div className="animate-slideDown lg:hidden font-primary">
+    <header
+      className={`lg:hidden z-50 font-primary ${
+        scrollProgressY > 130 &&
+        'scrollable animate-slideDown backdrop-blur-md dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowNavLight dark:bg-bgGlassDark top-0 sticky'
+      }`}>
       <div className="flex items-center p-4 justify-between">
         <Image
           className="w-[120px] h-auto"
-          priority
           src={
             theme === 'dark'
               ? '/images/logo-light-200.png'
@@ -96,7 +101,6 @@ const MobileNav = () => {
               <div className="flex items-center pb-7 justify-between">
                 <Image
                   className="h-[65px] w-auto"
-                  priority
                   src={
                     theme === 'dark'
                       ? '/images/logo-image-light-200.png'
@@ -120,6 +124,7 @@ const MobileNav = () => {
                       key={route.to}
                       className="py-1 my-2">
                       <Link
+                        onClick={() => setShowMobileNav(false)}
                         className={`nav-link ${
                           currentRoute === route.to
                             ? 'text-colorPrimary'
@@ -132,7 +137,7 @@ const MobileNav = () => {
                   ))}
                 <div className="mt-10 mb-5 flex">
                   <Link
-                    className="neo-button group"
+                    className="neo-button hire group"
                     href="/">
                     <span className="text-xl group-hover:scale-125 wave mr-3">
                       <IoHandLeft />
@@ -145,7 +150,7 @@ const MobileNav = () => {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </header>
   );
 };
 
