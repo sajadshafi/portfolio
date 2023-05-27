@@ -56,7 +56,6 @@ const MobileNav = () => {
       <div className="flex items-center p-4 justify-between">
         <Image
           className="w-[120px] h-auto"
-          priority
           src={
             theme === 'dark'
               ? '/images/logo-light-200.png'
@@ -102,7 +101,6 @@ const MobileNav = () => {
               <div className="flex items-center pb-7 justify-between">
                 <Image
                   className="h-[65px] w-auto"
-                  priority
                   src={
                     theme === 'dark'
                       ? '/images/logo-image-light-200.png'
@@ -126,6 +124,7 @@ const MobileNav = () => {
                       key={route.to}
                       className="py-1 my-2">
                       <Link
+                        onClick={() => setShowMobileNav(false)}
                         className={`nav-link ${
                           currentRoute === route.to
                             ? 'text-colorPrimary'

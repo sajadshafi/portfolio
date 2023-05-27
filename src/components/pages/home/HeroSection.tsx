@@ -1,16 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import { HiArrowLongRight } from 'react-icons/hi2';
 
-import TypingAnimation from './TypingAnimation';
-import { IconLink } from './common/Button';
-import Tooltip from './common/Tooltips';
-import socialLinks from '@/utils/socialLinks';
+import TypingAnimation from '../../TypingAnimation';
+import SlideSection from '../../animations/SlideSection';
+import SocialSection from '@/components/SocialSection';
 
 const HeroSection = () => {
   return (
     <div className="flex lg:grid lg:grid-cols-5 md:items-center flex-col-reverse lg:flex-row mx-4 lg:mx-0 lg:items-center xl:w-full xl:grid-cols-2">
-      <div className="lg:col-span-3 xl:col-span-1 my-8 sm:mx-4 lg:mx-0 sm:my-10 md:mt-6 md:mb-14 xl:pl-6">
+      <SlideSection className="lg:col-span-3 xl:col-span-1 my-8 sm:mx-4 lg:mx-0 sm:my-10 md:mt-6 md:mb-14 xl:pl-6">
         <h1 className="text-[40px] py-4 px-2 sm:text-[45px] md:text-[60px] lg:text-[50px] dark:text-colorWhite text-colorHeadingwv text-left font-primary font-bold leading-[60px]">
           Hi, I’m <span className="text-colorPrimary">Sajad Shafi</span>
           <br />
@@ -43,32 +44,18 @@ const HeroSection = () => {
               <HiArrowLongRight />
             </span>
           </p>
-          <div className="flex mt-10 gap-7">
-            {socialLinks.map(sm => (
-              <Tooltip.Top
-                text={sm.name}
-                key={sm.name}
-                position="top">
-                <IconLink
-                  classes="rounded-md text-2xl"
-                  icon={sm.icon}
-                  to={sm.to}
-                />
-              </Tooltip.Top>
-            ))}
-          </div>
+          <SocialSection className="mt-10" />
         </div>
-      </div>
-      <div className="lg:col-span-2 xl:col-span-1 dark:bg-backgroundColor2 rounded-[10px] dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowWhite3 p-4 sm:p-6 mx-3 sm:mx-4 xl:flex xl:justify-center xl:mx-0 xl:ml-auto xl:mr-[2rem] lg:mt-6 xl:w-[500px] 2xl:w-[500px]">
+      </SlideSection>
+      <SlideSection className="lg:col-span-2 xl:col-span-1 dark:bg-backgroundColor2 rounded-[10px] dark:shadow-shadow1 bg-backgroundColor1 shadow-shadowWhite3 p-4 sm:p-6 mx-3 sm:mx-4 xl:flex xl:justify-center xl:mx-0 xl:ml-auto xl:mr-[2rem] lg:mt-6 xl:w-[500px] 2xl:w-[500px]">
         <Image
           className="rounded-[10px] w-full h-full"
           src="/images/img-9.jpg"
-          priority
           width={600}
           height={600}
           alt="Sajad shafi - software engineer"
         />
-      </div>
+      </SlideSection>
     </div>
   );
 };

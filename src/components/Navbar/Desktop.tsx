@@ -23,7 +23,6 @@ const DesktopNav = () => {
       }`}>
       <Image
         className="w-[140px] h-auto"
-        priority
         src={
           theme === 'dark'
             ? '/images/logo-light-200.png'

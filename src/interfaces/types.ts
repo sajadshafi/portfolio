@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons/lib';
-
 export interface ButtonProps {
   text?: string;
   classes?: string;
@@ -13,6 +11,11 @@ export interface LinkProps {
   icon?: React.ReactNode;
 }
 
+export interface HeadingProps {
+  title: string;
+  subTitle: string;
+  className?: string;
+}
 export interface ThemeContextOptions {
   theme: ThemeType;
   toggleTheme: () => void;
@@ -29,5 +32,18 @@ export interface RouteValue {
 export interface SocialMediaLinkOptions {
   to: string;
   name: string;
+  icon: React.ReactNode;
+}
+
+export interface AboutDetailOptions {
+  text: string;
+  icon: React.ReactNode;
+}
+
+export interface InputProps {
+  name: string;
+  placeholder: string;
+  error: string;
+  className?: string;
   icon: React.ReactNode;
 }
