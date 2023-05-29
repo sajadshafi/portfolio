@@ -32,7 +32,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <body className={`${theme} ${theme}-body`}>{children}</body>
+      <div className={`${theme} ${theme}-body`}>{children}</div>
     </ThemeContext.Provider>
   );
 };
