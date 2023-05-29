@@ -1,3 +1,5 @@
+import { RegisterOptions, UseFormRegister } from 'react-hook-form';
+
 export interface ButtonProps {
   text?: string;
   classes?: string;
@@ -41,9 +43,25 @@ export interface AboutDetailOptions {
 }
 
 export interface InputProps {
-  name: string;
+  name: 'name' | 'email_from' | 'subject' | 'message';
   placeholder: string;
-  error: string;
+  error?: string;
   className?: string;
   icon: React.ReactNode;
+  type?: string;
+  reg: UseFormRegister<ContactFormValues>;
+  registerOptions: RegisterOptions;
+}
+
+export interface TooltipProps {
+  text: string;
+  className?: string;
+  children: React.ReactNode;
+}
+
+export interface ContactFormValues {
+  email_from: string;
+  name: string;
+  subject: string;
+  message: string;
 }
