@@ -14,6 +14,7 @@ module.exports = {
       colorTertiary: '#0d1013',
       colorGray: '#f6f6f6',
       colorSubtitle: '#f9004d',
+      transparent: 'transparent',
 
       // Typo Colors
       colorHeadingwv: '#1e2125',
@@ -69,6 +70,10 @@ module.exports = {
         shadowWhite3: '5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff',
         neoLarge: '11px 11px 34px #1b1e21 -11px -11px 34px #272a2f',
         shadowNavLight: '10px 10px 19px rgba(0, 0, 0, 0.1)',
+        lightInnerShadow:
+          'inset 5px 5px 10px #c9cccf, inset -5px -5px 10px #ffffff',
+        darkInnerShadow:
+          'inset 5px 5px 10px #17191c, inset -5px -5px 10px #2b2f34',
       },
       fontFamily: {
         // Font Family

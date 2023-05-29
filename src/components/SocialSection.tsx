@@ -9,8 +9,7 @@ const SocialSection = ({ className }: { className: string }) => {
       {socialLinks.map(sm => (
         <Tooltip.Top
           text={sm.name}
-          key={sm.name}
-          position="top">
+          key={sm.name}>
           <IconLink
             classes="rounded-md text-2xl"
             icon={sm.icon}
@@ -28,8 +27,7 @@ export const FooterSocialSection = ({ className }: { className: string }) => {
       {footerLinks.map(sm => (
         <Tooltip.Top
           text={sm.name}
-          key={sm.name}
-          position="top">
+          key={sm.name}>
           <IconLink
             classes="rounded-md text-2xl"
             icon={sm.icon}

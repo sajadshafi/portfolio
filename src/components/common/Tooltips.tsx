@@ -1,19 +1,12 @@
 import React from 'react';
+import { TooltipProps } from '@/interfaces/types';
 
-const TooltipTop = ({
-  text,
-  position,
-  children,
-}: {
-  text: string;
-  position: string;
-  children: React.ReactNode;
-}) => {
+const TooltipTop = ({ text, className, children }: TooltipProps) => {
   return (
-    <div className="relative group flex items-center justify-center">
+    <div
+      className={`relative group ${className} flex items-center justify-center`}>
       {children}
-      <span
-        className={`tooltip${position} w-max lowercase absolute scale-0 bottom-[110%] left-1/2 -translate-x-1/2 z-20 scale-1 group-hover:scale-100 text-colorWhite px-[4px] py-[1px] text-[13px] font-medium origin-bottom transition-transform duration-300 text-white bg-colorPrimary rounded-md`}>
+      <span className="tooltiptop w-max lowercase absolute scale-0 bottom-[110%] left-1/2 -translate-x-1/2 z-20 scale-1 group-hover:scale-100 text-colorWhite px-[4px] py-[1px] text-[13px] font-medium origin-bottom transition-transform duration-300 text-white bg-colorPrimary rounded-md">
         {text}
       </span>
     </div>

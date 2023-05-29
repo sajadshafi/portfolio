@@ -9,9 +9,7 @@ const Home = () => {
         <HeroSection />
       </div>
       <div className="px-6 sm:px-10 w-full">
-        <div
-          id="about"
-          className="pt-20 border-t border-t-colorSubtitle w-full">
+        <div className="pt-20 border-t border-t-colorSubtitle w-full">
           <About />
         </div>
       </div>

@@ -5,7 +5,7 @@ import { aboutDetails } from '@/utils/data';
 import User from '@/components/icons/User';
 import { IconLink } from '@/components/common/Button';
 
-const ContactDetails = () => {
+const ContactDetails = ({ isContact }: { isContact?: boolean }) => {
   return (
     <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full p-8 flex flex-col gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] lg:justify-center xl:col-span-2">
       <div className="p-[10px] mr-auto rounded-full inline-block bg-colorPrimary bg-opacity-20">
@@ -32,12 +32,14 @@ const ContactDetails = () => {
           classes="font-semibold hover:-translate-y-1 lg:w-fit rounded-primary font-primary  bg-backgroundColor1 dark:bg-backgroundColor2"
           text="Download CV"
         />
-        <IconLink
-          to="/contact"
-          icon={<RiContactsLine className="mr-2" />}
-          classes="font-semibold max-[455px]:mt-4 hover:-translate-y-1 lg:w-fit rounded-primary font-primary  bg-backgroundColor1 dark:bg-backgroundColor2"
-          text="Contact Me"
-        />
+        {!isContact && (
+          <IconLink
+            to="/contact"
+            icon={<RiContactsLine className="mr-2" />}
+            classes="font-semibold max-[455px]:mt-4 hover:-translate-y-1 lg:w-fit rounded-primary font-primary  bg-backgroundColor1 dark:bg-backgroundColor2"
+            text="Contact Me"
+          />
+        )}
       </div>
     </SlideSection>
   );

@@ -14,7 +14,7 @@ const About = () => {
         subTitle="An &nbsp;introduction"
         className="lg:items-start lg:w-1/2 lg:pl-2"
       />
-      <div className="my-5 grid lg:gap-5 grid-cols-1 lg:grid-cols-2 xl:grid-cols-5">
+      <div className="my-5 gap-4 grid lg:gap-7 grid-cols-1 lg:grid-cols-2 xl:grid-cols-5">
         <ContactDetails />
         <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full justify-center p-8 grid grid-cols-1 gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] xl:col-span-3">
           <div className="p-[10px] rounded-full inline-block bg-colorPrimary mb-6 mx-auto bg-opacity-20">
