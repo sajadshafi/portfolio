@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
