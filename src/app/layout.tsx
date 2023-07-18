@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@/store/ThemeContext';
 import '../styles/globals.scss';
-import Navbar from '@/components/navbar/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer';
 import fonts from '@/utils/fontConfig';
 import PageLoader from '@/components/PageLoader';

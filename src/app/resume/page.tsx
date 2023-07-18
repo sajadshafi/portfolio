@@ -28,6 +28,12 @@ const Resume = () => {
             subTitle="Professional Profile"
           />
         </div>
+        <div className="flex">
+          <VisitButton
+            text="Download PDF"
+            to="/documents/Sajad-Shafi_Resume.pdf"
+          />
+        </div>
         <Header />
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="lg:mr-8">
