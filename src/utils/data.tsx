@@ -7,7 +7,11 @@ import { IoLocationOutline } from 'react-icons/io5';
 import { BsFileEarmarkCode } from 'react-icons/bs';
 import { GrMail, GrSkype, GrLinkedin, GrGithub } from 'react-icons/gr';
 import { FaPhoneSquareAlt } from 'react-icons/fa';
-import { SocialMediaLinkOptions, AboutDetailOptions } from '@/interfaces/types';
+import {
+  SocialMediaLinkOptions,
+  AboutDetailOptions,
+  SkillValue,
+} from '@/interfaces/types';
 
 const socialLinks: SocialMediaLinkOptions[] = [
   {
@@ -73,14 +77,7 @@ export const projects = [
     tags: ['Next Js', 'Tailwind css', 'Framer motion'],
     linkText: '',
     linkUrl: '',
-  },
-  {
-    heading: 'Birdscode',
-    text: 'Birdscode is a blog where you will find a collection of my thoughts, insights, and experiences as a Software Engineer. My goal with this blog is to share my knowledge and expertise with others in the industry, and to provide a platform for discussion and learning. I am always seeking to improve my skills and knowledge as a Software Engineer, and I hope that my blog can serve as a resource for others who are looking to do the same.',
-    tags: ['Next Js', 'react-bootstrap', 'C#', '.NET Core'],
-    linkText: 'Visit',
-    linkUrl: 'https://www.birdscode.com',
-  },
+  }
 ];
 
 export const contactDetails = {
@@ -91,7 +88,7 @@ export const contactDetails = {
           <GrMail />
         </span>
         <Link
-          className="hover:underline contact-links hover:underline-offset-1"
+          className="hover:underline hover:text-colorPrimary dark:hover:text-colorPrimary contact-links hover:underline-offset-1"
           href="mailto:maliksajad004@gmail.com">
           maliksajad004@gmail.com
         </Link>
@@ -101,7 +98,7 @@ export const contactDetails = {
           <FaPhoneSquareAlt />
         </span>
         <Link
-          className="contact-links"
+          className="hover:text-colorPrimary dark:hover:text-colorPrimary contact-links"
           href="tel:+917006586736">
           +91-7006586736
         </Link>
@@ -112,7 +109,7 @@ export const contactDetails = {
         </span>
         <span className="">
           <Link
-            className="contact-links"
+            className="hover:text-colorPrimary dark:hover:text-colorPrimary contact-links"
             href="skype:live:.cid.253bd4f1fa21bb39?chat">
             maliksajad004@gmail.com
           </Link>
@@ -124,7 +121,7 @@ export const contactDetails = {
         </span>
         <span className="flex items-center">
           <Link
-            className="contact-links"
+            className="hover:text-colorPrimary dark:hover:text-colorPrimary contact-links"
             target="_blank"
             href="https://www.linkedin.com/in/sajadshafi/">
             @sajadshafi
@@ -137,7 +134,7 @@ export const contactDetails = {
         </span>
         <span className="flex items-center">
           <Link
-            className="ho"
+            className="hover:text-colorPrimary dark:hover:text-colorPrimary ho"
             target="_blank"
             href="https://github.com/sajadshafi">
             @sajadshafi
@@ -148,26 +145,28 @@ export const contactDetails = {
   ),
 };
 
-// techSkills: {
-//   heading: 'Technicals Skills',
-//   skills: [
-//     'Experienced in C# and ASP NET / .Net Core',
-//     'Proficient in HTML, CSS, JavaScript, ReactJS, and NextJS',
-//     'Strong understanding of software development life cycle and agile methodologies',
-//     'Proficient in debugging',
-//     'Experience with version control systems such as Git',
-//   ],
-// },
-// generalSkills: {
-//   heading: 'General Skills',
-//   skills: [
-//     'Strong problem-solving skills',
-//     'Ability to work independently and in a team',
-//     'Strong communication skills',
-//     'Adaptability and flexibility',
-//     'Public Speaking',
-//   ],
-// },
+export const skills: SkillValue[] = [
+  {
+    heading: 'Technicals Skills',
+    skills: [
+      'Experienced in C# and ASP NET / .Net Core',
+      'Proficient in HTML, CSS, JavaScript, ReactJS, and NextJS',
+      'Strong understanding of software development life cycle and agile methodologies',
+      'Proficient in debugging',
+      'Experience with version control systems such as Git',
+    ],
+  },
+  {
+    heading: 'General Skills',
+    skills: [
+      'Strong problem-solving skills',
+      'Ability to work independently and in a team',
+      'Strong communication skills',
+      'Adaptability and flexibility',
+      'Public Speaking',
+    ],
+  },
+];
 
 export const experiences = {
   heading: 'Work Experience',

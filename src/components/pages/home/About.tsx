@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Heading from '@/components/headings/Heading';
-import SlideSection from '@/components/animations/SlideSection';
+import slideAnimations from '@/components/animations/Slide';
 import ContactDetails from './ContactDetails';
 
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
       />
       <div className="my-5 gap-4 grid lg:gap-7 grid-cols-1 lg:grid-cols-2 xl:grid-cols-5">
         <ContactDetails />
-        <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full justify-center p-8 grid grid-cols-1 gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] xl:col-span-3">
+        <slideAnimations.SlideUp className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full justify-center p-8 grid grid-cols-1 gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] xl:col-span-3">
           <div className="p-[10px] rounded-full inline-block bg-colorPrimary mb-6 mx-auto bg-opacity-20">
             <Image
               className="rounded-full bg-backgroundColor1 dark:bg-backgroundColor2 shadow-md"
@@ -36,7 +36,7 @@ const About = () => {
             SQL and also worked with different frameworks including .NET Core,
             ReactJS, NextJS.
           </p>
-        </SlideSection>
+        </slideAnimations.SlideUp>
       </div>
     </>
   );

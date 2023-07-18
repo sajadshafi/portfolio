@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { RiContactsFill } from 'react-icons/ri';
-import SlideSection from '@/components/animations/SlideSection';
+import slideAnimations from '@/components/animations/Slide';
 import ContactDetails from '@/components/pages/home/ContactDetails';
 import ContactForm from '@/components/pages/contact/ContactForm';
 
@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="w-full">
           <div className="my-5 gap-4 grid lg:gap-7 grid-cols-1 lg:grid-cols-2 xl:grid-cols-5">
             <ContactDetails isContact />
-            <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full justify-center p-8 grid grid-cols-1 gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] xl:col-span-3">
+            <slideAnimations.SlideUp className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full justify-center p-8 grid grid-cols-1 gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] xl:col-span-3">
               <div className="p-[10px] h-fit mx-auto rounded-full inline-block bg-colorPrimary bg-opacity-20">
                 <span className="w-[50px] h-[50px] flex items-center justify-center bg-colorPrimary rounded-full text-2xl text-colorWhite">
                   <RiContactsFill />
@@ -22,7 +22,7 @@ const Contact = () => {
               <div className="font-secondary mt-3 px-2 lg:px-0 dark:text-colorLightn text-base leading-lineHeightb2 font-normal text-center text-colorBodyWhite sm:pr-8">
                 <ContactForm />
               </div>
-            </SlideSection>
+            </slideAnimations.SlideUp>
           </div>
         </div>
       </div>

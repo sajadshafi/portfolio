@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ButtonProps, LinkProps } from '@/interfaces/types';
+import ArrowRightIcon from '../icons/ArrowRightIcon';
 
 const ButtonPrimary = ({ text, onClick, classes, icon }: ButtonProps) => {
   return (
@@ -24,5 +25,20 @@ export const IconLink = ({ to, classes, icon, text }: LinkProps) => {
       {icon && <span>{icon}</span>}
       {text && <span>{text}</span>}
     </Link>
+  );
+};
+
+export const VisitButton = ({ to, classes, text }: LinkProps) => {
+  return (
+    <a
+      target="_blank"
+      rel="noreferrer"
+      className={`text-colorPrimary px-2 shadow-shadowWhite3 hover:bg-gradientRedHover dark:hover:bg-gradientRedHover dark:shadow-shadow1 hover:text-colorSecondary vtransition-all duration-300 ml-auto group mt-4 mr-3 pr-7 tracking-wider py-2 rounded-md font-Secondary flex items-center text-sm ${classes}`}
+      href={to}>
+      <span className="mr-2 font-semibold">{text}</span>
+      <span className="group-hover:translate-x-2 transition-transform duration-300">
+        <ArrowRightIcon />
+      </span>
+    </a>
   );
 };

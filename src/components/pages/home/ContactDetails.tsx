@@ -1,6 +1,6 @@
 import { HiDocumentArrowDown } from 'react-icons/hi2';
 import { RiContactsLine } from 'react-icons/ri';
-import SlideSection from '@/components/animations/SlideSection';
+import slideAnimations from '@/components/animations/Slide';
 import { aboutDetails } from '@/utils/data';
 import User from '@/components/icons/User';
 import { IconLink } from '@/components/common/Button';
@@ -8,7 +8,7 @@ import { IconLink } from '@/components/common/Button';
 // eslint-disable-next-line react/require-default-props
 const ContactDetails = ({ isContact }: { isContact?: boolean }) => {
   return (
-    <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full p-8 flex flex-col gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] lg:justify-center xl:col-span-2">
+    <slideAnimations.SlideUp className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full p-8 flex flex-col gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] lg:justify-center xl:col-span-2">
       <div className="p-[10px] mr-auto rounded-full inline-block bg-colorPrimary bg-opacity-20">
         <span className="w-[40px] h-[40px] flex items-center justify-center bg-colorPrimary rounded-full text-colorWhite">
           <User />
@@ -42,7 +42,7 @@ const ContactDetails = ({ isContact }: { isContact?: boolean }) => {
           />
         )}
       </div>
-    </SlideSection>
+    </slideAnimations.SlideUp>
   );
 };
 

@@ -65,3 +65,8 @@ export interface ContactFormValues {
   subject: string;
   message: string;
 }
+
+export interface SkillValue {
+  heading: string;
+  skills: string[];
+}

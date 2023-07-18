@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import slideAnimations from '@/components/animations/Slide';
 
 interface Props {
   children: React.ReactNode;
@@ -14,27 +14,22 @@ interface Props {
 
 const ResumeCard = ({ children, heading, icon, classNames }: Props) => {
   return (
-    <motion.div
-      className={`rounded-[10px] font-secondary dark:text-colorLightn text-colorBodyWhite bg-backgroundColor1 dark:bg-backgroundColor2 shadow-shadowWhite3 dark:shadow-shadow1 my-5 flex ${classNames} flex-col gap-5 pb-8`}
-      initial={{ scale: 0.4, opacity: 0, x: 30 }}
-      animate={{
-        scale: 1,
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.3 },
-      }}>
+    <slideAnimations.SlideUp
+      className={`rounded-[10px] p-6 font-secondary dark:text-colorLightn text-colorBodyWhite bg-backgroundColor1 dark:bg-backgroundColor2 shadow-shadowWhite3 dark:shadow-shadow1 my-7 flex ${classNames} flex-col gap-5 pb-8`}>
       <div className="flex items-center align-start">
         {icon && (
           <div className="p-4 flex">
             <span className="w-[50px] h-[50px] text-2xl text-colorWhite">
               {icon}
             </span>
-            <span>{heading}</span>
           </div>
         )}
+        <h1 className="border-l-4 pl-3 uppercase font-bold border-l-colorPrimary">
+          {heading}
+        </h1>
       </div>
       <div>{children}</div>
-    </motion.div>
+    </slideAnimations.SlideUp>
   );
 };
 
