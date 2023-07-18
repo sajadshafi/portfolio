@@ -77,7 +77,7 @@ export const projects = [
     tags: ['Next Js', 'Tailwind css', 'Framer motion'],
     linkText: '',
     linkUrl: '',
-  }
+  },
 ];
 
 export const contactDetails = {
