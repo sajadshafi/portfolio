@@ -26,8 +26,8 @@ const navbarVariant: Variants = {
 };
 
 const MobileNav = () => {
-  const currentRoute = usePathname();
   const { theme } = useTheme();
+  const currentRoute = usePathname();
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const { scrollProgressY } = useYScroll();
 

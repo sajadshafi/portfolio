@@ -9,7 +9,7 @@ const ThemeContext = React.createContext<ThemeContextOptions>({
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = React.useState<ThemeType>('dark');
+  const [theme, setTheme] = React.useState<ThemeType>('light');
 
   const SwitchTheme = useCallback(() => {
     localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark');
@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) setTheme(savedTheme as ThemeType);
-    else setTheme('dark');
+    else setTheme('light');
   }, []);
 
   const contextValue: ThemeContextOptions = React.useMemo<ThemeContextOptions>(

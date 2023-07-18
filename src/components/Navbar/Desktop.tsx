@@ -12,8 +12,8 @@ import useYScroll from '@/hooks/useYScroll';
 
 const DesktopNav = () => {
   const currentRoute = usePathname();
-  const { theme } = useTheme();
   const { scrollProgressY } = useYScroll();
+  const { theme } = useTheme();
 
   return (
     <nav

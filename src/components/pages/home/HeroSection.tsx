@@ -1,10 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
 import { HiArrowLongRight } from 'react-icons/hi2';
 
-import TypingAnimation from '../../TypingAnimation';
 import SlideSection from '../../animations/SlideSection';
 import SocialSection from '@/components/SocialSection';
 
@@ -18,19 +17,10 @@ const HeroSection = () => {
           <span
             className="header-caption"
             id="page-top">
-            {/* type headline start */}
             <span className="cd-headline clip is-full-width text-4xl md:text-5xl lg:text-[40px]">
               <span className="text-colorPrimary">a {'  '}</span>
-              {/* ROTATING TEXT */}
-              <TypingAnimation
-                textlist={[
-                  'Software Engineer.',
-                  'Professional Coder.',
-                  'Developer.',
-                ]}
-              />
+              <span>Software Engineer.</span>
             </span>
-            {/* type headline end */}
           </span>
         </h1>
         <p className="font-secondary mt-3 px-2 lg:px-0 dark:text-colorLightn font-normal text-base text-colorBodyWhite sm:pr-8">
