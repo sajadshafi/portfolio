@@ -10,10 +10,10 @@ import { ImSpinner2 } from 'react-icons/im';
 import { RiMessage3Fill, RiSendPlaneFill } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { SubmitHandler, useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 import Input, { InputArea } from './Input';
 import emailConfig from '../../../utils/config';
-import emailjs from '@emailjs/browser';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactFormValues } from '@/interfaces/types';
 import schema from '@/utils/contactFormSchema';
 
@@ -60,7 +60,6 @@ const ContactForm = () => {
           });
         },
         error => {
-          console.log('Error: ', error);
           setModalDetails({
             ...modalDetails,
             showModal: true,

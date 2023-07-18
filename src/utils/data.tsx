@@ -125,7 +125,7 @@ export const contactDetails = {
         <span className="flex items-center">
           <Link
             className="contact-links"
-            target={'_blank'}
+            target="_blank"
             href="https://www.linkedin.com/in/sajadshafi/">
             @sajadshafi
           </Link>
@@ -138,7 +138,7 @@ export const contactDetails = {
         <span className="flex items-center">
           <Link
             className="ho"
-            target={'_blank'}
+            target="_blank"
             href="https://github.com/sajadshafi">
             @sajadshafi
           </Link>

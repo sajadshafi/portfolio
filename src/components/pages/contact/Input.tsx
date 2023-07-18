@@ -55,8 +55,9 @@ export const InputArea = ({
       } items-start rounded-md`}>
       <span className="p-2 px-3 flex justify-center">{icon}</span>
       <textarea
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...reg(name, registerOptions)}
-        placeholder={error ? '* ' + error : placeholder}
+        placeholder={error ? `* ${error}` : placeholder}
         className={`${className} ${
           error
             ? 'placeholder:text-colorDanger placeholder:font-medium text-[13px]'
