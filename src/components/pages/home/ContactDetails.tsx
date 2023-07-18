@@ -5,6 +5,7 @@ import { aboutDetails } from '@/utils/data';
 import User from '@/components/icons/User';
 import { IconLink } from '@/components/common/Button';
 
+// eslint-disable-next-line react/require-default-props
 const ContactDetails = ({ isContact }: { isContact?: boolean }) => {
   return (
     <SlideSection className="mt-6 shadow-shadowWhite3 dark:shadow-shadow1 w-full p-8 flex flex-col gap-2 bg-backgroundColor1 dark:bg-backgroundColor2 rounded-[10px] lg:justify-center xl:col-span-2">

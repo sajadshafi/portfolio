@@ -36,7 +36,7 @@ const ContactForm = () => {
 
   const form = useRef<HTMLFormElement | null>(null);
 
-  const onsubmit: SubmitHandler<ContactFormValues> = data => {
+  const onsubmit: SubmitHandler<ContactFormValues> = () => {
     setLoading(true);
     const currentForm = form.current;
     if (currentForm == null) return;
@@ -59,7 +59,7 @@ const ContactForm = () => {
             message: 'Thanks! Message sent successfully!',
           });
         },
-        error => {
+        () => {
           setModalDetails({
             ...modalDetails,
             showModal: true,
